@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
 	future: {
 		removeDeprecatedGapUtilities: true,
@@ -15,6 +17,9 @@ module.exports = {
 	},
 	theme: {
 		extend: {
+			colors: {
+				gray: colors.blueGray,
+			},
 			screens: {
 				'content-xs': '20rem',
 				'content-sm': '24rem',
@@ -34,7 +39,10 @@ module.exports = {
 		},
 	},
 	variants: {
-		borderWidth: ['hover'],
+		extend: {
+			backgroundColor: ['active'],
+			borderWidth: ['hover'],
+		},
 	},
 	plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 }
